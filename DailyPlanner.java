@@ -38,7 +38,7 @@ public DailyPlanner {
           System.exit(1);
       }
 
-      Scanner scnr = new Scanner(new FileInputStream args[0]);
+      Scanner fileInputScanner = new Scanner(new FileInputStream args[0]);
       String askLoop = "y";
 
       for (int i = 0; i < months.length; i++) {
@@ -84,9 +84,9 @@ public DailyPlanner {
       }
 
       while (scnr.hasNext) {
+          months[eventMonth].addEvent(readEvent(fileInputScanner));
+      } //Trying to use the event month obtained from the readEvent method to add that event to said month by using the variable.
 
-
-      }
       while (askLoop != "n") {
           System.out.print();
       }
