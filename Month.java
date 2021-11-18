@@ -4,11 +4,11 @@ import java.util.*;
 
 /**
  * Constructs and returns information about months object
- * @author
+ * @author Parker Bennett
  * @author
  * //TOOD: Add all authors
  */
-public Month {
+public class Month {
   public final int MAX_EVENTS = 200;
 
   /** Number of days in the month */

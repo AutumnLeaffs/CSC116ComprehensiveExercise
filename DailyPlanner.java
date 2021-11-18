@@ -1,4 +1,8 @@
-public DailyPlanner {
+import java.util.*;
+import java.io.*;
+
+
+public class DailyPlanner {
   public final int numberOfMonths = 12;
 
   public Events[] events;
@@ -88,8 +92,12 @@ public DailyPlanner {
           months[eventMonth].addEvent(readEvent(fileInputScanner));
       } //Trying to use the event month obtained from the readEvent method to add that event to said month by using the variable.
 
-      while (askLoop != "n") {
-          System.out.print();
+      // while (askLoop != "n") {
+      //     System.out.print();
+      // }
+
+      for (int i = 0; i < months.length; i++) {
+          System.out.print(months[i].toString());
       }
 
   }

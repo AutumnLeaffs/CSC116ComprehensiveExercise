@@ -4,7 +4,7 @@
  * @author
  * //TOOD: Add all authors
  */
-public Events {
+public class Event {
 
     /** Name of the event */
     private String eventName;
@@ -29,7 +29,7 @@ public Events {
      * @param year int year of the event
      * @parm time military time of the event
      */
-    public Events(String name, Month month, int day, int year, int time) {
+    public Event(String name, Month month, int day, int year, int time) {
       eventName = name;
       this.month = month;
       this.day = day;
@@ -44,7 +44,7 @@ public Events {
      * @param day int date of the event
      * @param year int year of the event
      */
-    public Events(String name, Month month, int day, int year) {
+    public Event(String name, Month month, int day, int year) {
         eventName = name;
         this.month = month;
         this.day = day;
