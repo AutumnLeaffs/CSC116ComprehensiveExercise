@@ -86,7 +86,7 @@ public class DailyPlanner {
           }
       }
 
-      while (scnr.hasNext()) {
+      while (fileInputScanner.hasNext()) {
           months[eventMonth].addEvent(readEvent(fileInputScanner));
       } //Trying to use the event month obtained from the readEvent method to add that event to said month by using the variable.
 
