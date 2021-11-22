@@ -1,7 +1,10 @@
 /**
  * Constructs and returns information about events object
+ object
  * @author Alexi McNabb
- * @author
+ * @author Matthew Zhang
+ * @author Parker Bennett
+ * @author Karan Patel
  * //TOOD: Add all authors
  */
 public class Event {
