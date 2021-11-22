@@ -52,7 +52,7 @@ public class Event {
         this.month = month;
         this.day = day;
         this.year = year;
-        time = -1;
+        this.time = -1;
     }
 
     /**
@@ -84,13 +84,8 @@ public class Event {
      * @return int time or null
      */
     public int getEventTime() {
-      if (time != -1) {
           return time;
       }
-      else {
-          return null;
-      }
-    }
 
     /**
      * Gets the year of the event
@@ -106,8 +101,8 @@ public class Event {
      * @return true if the events are the same, false otherwise
      */
     public boolean equals(Object o) {
-        if (o instanceof Events) {
-            Events other = (Events)o;
+        if (o instanceof Event) {
+            Event other = (Event)o;
             if (eventName.equals(other.eventName) && month.equals(other.month) &&
                 day == other.day && time == other.time && year == other.year) {
                 return true;

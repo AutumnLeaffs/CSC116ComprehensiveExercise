@@ -42,7 +42,7 @@ public class Month {
    * @param inputFile the name of the file to be used as input
    * @param eventCount the number of events taking place during the month
    */
-  public Month(int numberOfDays, int monthNumber, String inputFile) {
+  public Month(int numberOfDays, int monthNumber, String inputFile) throws FileNotFoundException {
       this.numberOfDays = numberOfDays;
       this.monthNumber = monthNumber;
       this.inputFile = inputFile;
@@ -136,12 +136,6 @@ public class Month {
   * @returns boolean true or false depending on whether or not the two objects equal
   */
   public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    else {
-        return false;
-    }
     if (o instanceof Month) {
       if (((Month)o).numberOfDays == this.numberOfDays &&
          ((Month)o).inputFile == this.inputFile && ((Month)o).scnr == this.scnr &&
