@@ -6,8 +6,6 @@ public class DailyPlanner {
   public final int numberOfMonths = 12;
 
   public Event[] events;
-  public Month[] months = new Month[12];
-  //test commit
 
   public static int eventMonth;
   public static int eventDay;
@@ -37,7 +35,7 @@ public class DailyPlanner {
 
 
   public static void main(String[] args) {
-
+      Month[] months = new Month[12];
       if (args.length != 2) {
           System.out.println("Usage: java -cp bin DailyPlanner infile.txt outfile.txt");
           System.exit(1);
