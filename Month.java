@@ -58,7 +58,7 @@ public class Month {
    */
   public String toString() {
       String s = "";
-      s += "Month: "
+      s += "Month: ";
       switch (monthNumber) {
           case 1:
             s += "January";
@@ -137,14 +137,23 @@ public class Month {
   */
   public boolean equals(Object o) {
     if (o == this) {
-      return true
+      return true;
+    }
+    else {
+        return false;
     }
     if (o instanceof Month) {
-      if (((Month)o).numberOfDays == this.numberOfDays && ((Month)o).month == this.month &&
+      if (((Month)o).numberOfDays == this.numberOfDays &&
          ((Month)o).inputFile == this.inputFile && ((Month)o).scnr == this.scnr &&
          ((Month)o).eventCount == this.eventCount && ((Month)o).events == this.events) {
         return true;
       }
+      else {
+          return false;
+      }
+    }
+    else {
+        return false;
     }
 
   }

@@ -43,7 +43,7 @@ public class DailyPlanner {
           System.exit(1);
       }
 
-      Scanner fileInputScanner = new Scanner(new FileInputStream args[0]);
+      Scanner fileInputScanner = new Scanner(new FileInputStream(args[0]));
       String askLoop = "y";
 
       for (int i = 0; i < months.length; i++) {
