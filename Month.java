@@ -4,8 +4,12 @@ import java.util.*;
 
 /**
  * Constructs and returns information about months object
+
+object
+ * @author Alexi McNabb
+ * @author Matthew Zhang
  * @author Parker Bennett
- * @author
+ * @author Karan Patel
  * //TOOD: Add all authors
  */
 public class Month {
