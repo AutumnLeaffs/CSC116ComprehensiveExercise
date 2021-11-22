@@ -17,70 +17,124 @@ public class DailyPlanner {
   public static final int THIRTY_ONE_DAYS = 31;
   public static final int TWENTY_EIGHT_DAYS = 28;
   public static final int LEAP_MONTH = 29;
+  public static String fileName = "";
 
-  public static Event readEvent(Scanner scnr) {
-      eventMonth = scnr.nextInt();
-      eventDay = scnr.nextInt();
-      eventYear = scnr.nextInt();
-      eventHour = scnr.nextInt();
-      eventName = "";
-      while (scnr.next() != "|") {
-          eventName += scnr.next();
-      }
-
-      Event event = new Event(eventName, eventMonth, eventDay, eventYear, eventHour);
-      return event;
-  }
-
-
-
+  
   public static void main(String[] args) {
       Month[] months = new Month[12];
+      Scanner fileInputScanner = null;
       if (args.length != 2) {
           System.out.println("Usage: java -cp bin DailyPlanner infile.txt outfile.txt");
           System.exit(1);
       }
-
-      Scanner fileInputScanner = new Scanner(new FileInputStream(args[0]));
+      
+      fileName = args[0];
+      try { 
+        fileInputScanner = new Scanner(new FileInputStream(args[0]));
+      }
+      catch (IOException o){
+          System.out.println("File Error");
+      }
+      
       String askLoop = "y";
 
       for (int i = 0; i < months.length; i++) {
           switch (i) {
               case 1:
-                months[i] = new Month(THIRTY_ONE_DAYS, i, args[0]);
+                try {
+                    months[i] = new Month(THIRTY_ONE_DAYS, i, args[0]);
+                }
+                catch (IOException o){
+                    System.out.println("File Error");
+                }
                 break;
               case 2:
-                months[i] = new Month(TWENTY_EIGHT_DAYS, i, args[0]);
+                try {
+                    months[i] = new Month(TWENTY_EIGHT_DAYS, i, args[0]);
+                }
+                catch (IOException o){
+                    System.out.println("File Error");
+                }
                 break;
               case 3:
-                months[i] = new Month(THIRTY_ONE_DAYS, i, args[0]);
+                try {
+                    months[i] = new Month(THIRTY_ONE_DAYS, i, args[0]);
+                }
+                catch (IOException o){
+                    System.out.println("File Error");
+                }
                 break;
               case 4:
-                months[i] = new Month(THIRTY_DAYS, i, args[0]);
+                try {
+                    months[i] = new Month(THIRTY_DAYS, i, args[0]);
+                }
+                catch (IOException o){
+                    System.out.println("File Error");
+                }
                 break;
               case 5:
-                months[i] = new Month(THIRTY_ONE_DAYS, i, args[0]);
+                try {
+                    months[i] = new Month(THIRTY_ONE_DAYS, i, args[0]);
+                }
+                catch (IOException o){
+                    System.out.println("File Error");
+                }
                 break;
               case 6:
-                months[i] = new Month(THIRTY_DAYS, i, args[0]);
+                try {
+                    months[i] = new Month(THIRTY_DAYS, i, args[0]);
+                }
+                catch (IOException o){
+                    System.out.println("File Error");
+                }
                 break;
               case 7:
-                months[i] = new Month(THIRTY_ONE_DAYS, i, args[0]);
+                try {
+                    months[i] = new Month(THIRTY_ONE_DAYS, i, args[0]);
+                }
+                catch (IOException o){
+                    System.out.println("File Error");
+                }
                 break;
               case 8:
-                months[i] = new Month(THIRTY_ONE_DAYS, i, args[0]);
+                try {
+                    months[i] = new Month(THIRTY_ONE_DAYS, i, args[0]);
+                }
+                catch (IOException o){
+                    System.out.println("File Error");
+                }
                 break;
               case 9:
-                months[i] = new Month(THIRTY_DAYS, i, args[0]);
+                try {
+                    months[i] = new Month(THIRTY_DAYS, i, args[0]);
+                }
+                catch (IOException o){
+                    System.out.println("File Error");
+                }
                 break;
               case 10:
-                months[i] = new Month(THIRTY_ONE_DAYS, i, args[0]);
+                try {
+                    months[i] = new Month(THIRTY_ONE_DAYS, i, args[0]);
+                }
+                catch (IOException o){
+                    System.out.println("File Error");
+                }
                 break;
               case 11:
-                months[i] = new Month(THIRTY_DAYS, i, args[0]);
+                try {
+                    months[i] = new Month(THIRTY_DAYS, i, args[0]);
+                }
+                catch (IOException o){
+                    System.out.println("File Error");
+                }
                 break;
               case 12:
-                months[i] = new Month(THIRTY_ONE_DAYS, i, args[0]);
+                try {
+                    months[i] = new Month(THIRTY_ONE_DAYS, i, args[0]);
+                }
+                catch (IOException o){
+                    System.out.println("File Error");
+                }
                 break;
               default:
           }
@@ -98,5 +152,47 @@ public class DailyPlanner {
           System.out.print(months[i].toString());
       }
 
+  }
+  
+  public static Event readEvent(Scanner scnr) {
+      eventMonth = scnr.nextInt();
+      eventDay = scnr.nextInt();
+      eventYear = scnr.nextInt();
+      eventHour = scnr.nextInt();
+      eventName = "";
+      Month eventMonthModifier = null;
+      while (scnr.next() != "|") {
+          eventName += scnr.next();
+      }
+      
+      if (eventMonth % 2 == 0 && eventMonth != 2) {
+          try {
+            eventMonthModifier = new Month(30, eventMonth, fileName);
+          }
+          catch (IOException o){
+            System.out.println("Event Error");
+          }
+          //Month(int numberOfDays, int monthNumber, String inputFile)
+      }
+      else if (eventMonth % 2 == 0 && eventMonth == 2) {
+          try {
+            eventMonthModifier = new Month(28, eventMonth, fileName);
+          }
+          catch (IOException o){
+            System.out.println("Event Error");
+          }
+      }
+      else {
+          try {
+            eventMonthModifier = new Month(31, eventMonth, fileName);
+          }
+          catch (IOException o){
+            System.out.println("Event Error");
+          }
+          
+      }
+
+      Event event = new Event(eventName, eventMonthModifier, eventDay, eventYear, eventHour);
+      return event;
   }
 }
