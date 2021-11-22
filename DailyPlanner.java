@@ -5,7 +5,7 @@ import java.io.*;
 public class DailyPlanner {
   public final int numberOfMonths = 12;
 
-  public Events[] events;
+  public Event[] events;
   public Month[] months = new Month[12];
   //test commit
 
@@ -21,16 +21,16 @@ public class DailyPlanner {
   public static final int LEAP_MONTH = 29;
 
   public static Event readEvent(Scanner scnr) {
-      this.eventMonth = scnr.nextInt();
-      this.eventDay = scnr.nextInt();
-      this.eventYear = scnr.nextInt();
-      this.eventHour = scnr.nextInt();
-      this.eventName = "";
+      eventMonth = scnr.nextInt();
+      eventDay = scnr.nextInt();
+      eventYear = scnr.nextInt();
+      eventHour = scnr.nextInt();
+      eventName = "";
       while (scnr.next() != "|") {
-          this.eventName += scnr.next();
+          eventName += scnr.next();
       }
 
-      Event event = new Event(name, month, day, year, hour);
+      Event event = new Event(eventName, eventMonth, eventDay, eventYear, eventHour);
       return event;
   }
 
