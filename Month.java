@@ -40,7 +40,6 @@ public class Month {
    * @param numberOfDays the number of days in the month
    * @param monthNumber the number of the month (January = 1 etc)
    * @param inputFile the name of the file to be used as input
-   * @param eventCount the number of events taking place during the month
    */
   public Month(int numberOfDays, int monthNumber, String inputFile) throws FileNotFoundException {
       this.numberOfDays = numberOfDays;
