@@ -3,7 +3,7 @@ import java.io.*;
 
 
 public class DailyPlanner {
-  public static final int numberOfMonths = 12;
+  public static final int NUMBER_OF_MONTHS = 12;
   public static final int MAX_EVENTS = 200;
   public static final int THIRTY_DAYS = 30;
   public static final int THIRTY_ONE_DAYS = 31;
@@ -11,7 +11,7 @@ public class DailyPlanner {
   public static final int LEAP_MONTH = 29;
 
   public static Event[] events = new Event[MAX_EVENTS];
-  public static Month[] months = new Month[12];
+  public static Month[] months = new Month[NUMBER_OF_MONTHS];
 
   public static int eventMonthGlobal;
   public static String fileName = "";
