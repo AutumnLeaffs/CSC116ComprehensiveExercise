@@ -57,7 +57,7 @@ public class Month {
    */
   public String toString() {
       String s = "";
-      s += "Month: ";
+      s += "\nMonth: ";
       switch (monthNumber) {
           case 1:
             s += "January";
@@ -100,13 +100,14 @@ public class Month {
             break;
       }
 
+      s += "\nNumber of events: " + eventCount;
+      
       for (int i = 0; i < events.length; i++) {
           if (events[i] != null) {
               s += "\n" + events[i].toString();
           }
       }
 
-      s += "\nNumber of events: " + eventCount;
 
       return s;
 
