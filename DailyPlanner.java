@@ -20,8 +20,8 @@ public class DailyPlanner {
   public static void main(String[] args) {
 
       Scanner fileInputScanner = null;
-      if (args.length != 2) {
-          System.out.println("Usage: java -cp bin DailyPlanner infile.txt outfile.txt");
+      if (args.length != 1) {
+          System.out.println("Usage: java -cp bin DailyPlanner infile.txt");
           System.exit(1);
       }
 
@@ -147,6 +147,10 @@ public class DailyPlanner {
           System.out.print(months[i].toString() + "\n");
       }
 
+      // System.out.println("Please input an option below: ");
+      // System.out.println("A - Add event");
+      // System.out.println("C - Check for events");
+
   }
 
   public static Event readEvent(Scanner scnr) {
@@ -197,4 +201,5 @@ public class DailyPlanner {
       months[eventMonth - 1].addEvent(event);
       return event;
   }
+
 }
